@@ -131,14 +131,14 @@ namespace OOP_Lab04
             return (int)Convert.ChangeType(set1._list.Max(), typeof(int)) - (int)Convert.ChangeType(set1._list.Min(), typeof(int));
         }
 
-        public static string Encryption(string str)
+        public static string Encryption(this string str)
         {
             StringBuilder s = new StringBuilder(str);
             for (int i=0; i<s.Length; i++) s[i]=(char)(s[i]+i);
             return s.ToString();
         }
 
-        public static bool isSorted<T>(Set<T> set1)
+        public static bool isSorted<T>(this Set<T> set1)
         {
            if (set1._list.SequenceEqual(set1._list.OrderBy(x => x))) return true;
            else return false;
